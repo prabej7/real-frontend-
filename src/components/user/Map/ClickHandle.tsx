@@ -7,6 +7,7 @@ interface ClickHandlerProps {
 
 const ClickHandler: React.FC<ClickHandlerProps> = ({ onClick }) => {
     useMapEvents({
+        //@ts-expect-error Event 
         click(e) {
             onClick({
                 lat: e.latlng.lat,
@@ -14,7 +15,7 @@ const ClickHandler: React.FC<ClickHandlerProps> = ({ onClick }) => {
             });
         },
     });
-    return null; 
+    return null;
 };
 
 export default ClickHandler;

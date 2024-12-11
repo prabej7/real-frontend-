@@ -1,4 +1,4 @@
-import { useMap, useMapEvents } from "react-leaflet";
+import { useMap } from "react-leaflet";
 import { useEffect } from "react";
 
 export interface Coords {
