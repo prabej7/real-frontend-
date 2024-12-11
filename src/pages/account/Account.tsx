@@ -26,6 +26,8 @@ const Account: React.FC = () => {
 
     if (isLoading) return <LoadingPage />
 
+    console.log(user);
+
     if (!user?.verified) {
         return <Verification />
     }

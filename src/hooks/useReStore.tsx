@@ -1,21 +1,14 @@
 import api from "@/constants/api";
-import { useHostels, useLands, useRooms, useUser } from "@/store";
+import { useHostels, useLands, useRooms } from "@/store";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { useEffect } from "react";
-import { useCookies } from "react-cookie";
 
 const useRestore = () => {
-    const [{ token }] = useCookies(['token']);
+
     const { setRooms } = useRooms();
     const { setLands } = useLands();
     const { setHostels } = useHostels();
-    const { setUser } = useUser();
-
-    const fetchUserData = async () => {
-        const { data } = await axios.get(`${api}user/${token}`);
-        return data;
-    }
 
     const fetchRooms = async () => {
         const response = await axios.get(`${api}all-rooms`);
@@ -47,18 +40,15 @@ const useRestore = () => {
         queryFn: fetchHostel
     });
 
-    const { data: userData, isLoading: isUserLoading } = useQuery({
-        queryKey: ['user'],
-        queryFn: fetchUserData,
-    })
+
 
     useEffect(() => {
         setRooms(roomData?.rooms);
         setHostels(hostelData?.hostels);
         setLands(landData?.lands);
-        setUser(userData?.user)
+
         //eslint-disable-next-line
-    }, [isRoomLoading, isLandLoading, isHostelLaoding, isUserLoading]);
+    }, [isRoomLoading, isLandLoading, isHostelLaoding]);
 }
 
 export default useRestore;
