@@ -89,7 +89,7 @@ const RoomFilter: React.FC<Props> = ({ onMap }) => {
     }
 
     return <div className="mt-3" >
-        <Dialogue open={rooms.length > 0} title="Filtered Rooms" description="by price, rooms and other facilities." children={<div>
+        <Dialogue onOpenChange={() => setRooms([])} open={rooms.length > 0} title="Filtered Rooms" description="by price, rooms and other facilities." children={<div>
             {rooms.map(({ info: { address, lat, lon }, noOfRooms }) => {
                 return <div className="flex justify-between items-center" >
                     <div>
