@@ -26,7 +26,7 @@ const Dialogue: React.FC<Props> = ({ title, triggerer, children, description, on
         <DialogContent className={`w-${w}`} >
             <DialogHeader>
                 <DialogTitle className="text-slate-800" >{title}</DialogTitle>
-                <DialogDescription>
+                <DialogDescription className="font-light" >
                     {description}
                 </DialogDescription>
             </DialogHeader>

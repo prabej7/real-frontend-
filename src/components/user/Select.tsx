@@ -16,11 +16,11 @@ const SelectC: React.FC<Props> = ({ onChange, values, placeholder }) => {
     return (
         <Select onValueChange={onChange}>
             <SelectTrigger className="w-[180px]">
-                <SelectValue placeholder={placeholder ? placeholder : values[0].title} />
+                <SelectValue placeholder={placeholder ? placeholder : values[0].title}   />
             </SelectTrigger>
             <SelectContent >
                 {values.map(({ title, value }) => (
-                    <SelectItem key={value} value={value}>
+                    <SelectItem className="font-light" key={value} value={value}>
                         {title}
                     </SelectItem>
                 ))}

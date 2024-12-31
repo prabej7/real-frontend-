@@ -11,9 +11,10 @@ import { useLocation } from 'react-router-dom';
 
 interface Props {
     onLocationSelect: (coords: Coords) => void;
+    initialCoords?: Coords
 }
 
-const Map: React.FC<Props> = ({ onLocationSelect }) => {
+const Map: React.FC<Props> = ({ onLocationSelect, initialCoords }) => {
     const { state } = useLocation();
     const { rooms } = useRooms();
     const { lands } = useLands();
@@ -63,10 +64,20 @@ const Map: React.FC<Props> = ({ onLocationSelect }) => {
             return;
         }
 
+        if (initialCoords) {
+            const { lat, lng } = initialCoords;
+            setCurrentPosition({
+                lat: Number(lat),
+                lng: Number(lng)
+            });
+
+            return;
+        }
+
         return askLocationPermission();
 
         //eslint-disable-next-line
-    }, []);
+    }, [initialCoords]);
 
     return (
         <>

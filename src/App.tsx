@@ -1,6 +1,6 @@
 import { Route, RouteProps, Routes } from 'react-router-dom';
 import './App.css';
-import { Account, AddProperty, Home, Inbox, Login, MapPage, Properties, Register, Rooms } from './pages';
+import { Account, AddProperty, AllProperties, Home, Inbox, Login, MapPage, Properties, Register, Rooms } from './pages';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AuthLayout from './pages/AuthLayout';
@@ -13,7 +13,8 @@ function App() {
     { path: '/register', element: <Register /> },
     { path: "/map", element: <MapPage /> },
     { path: "/rooms", element: <Rooms /> },
-    { path: '/', element: <Home /> }
+    { path: '/', element: <Home /> },
+    { path: "/all", element: <AllProperties /> }
   ];
 
   const protectedRoutes: RouteProps[] = [

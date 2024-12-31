@@ -15,7 +15,7 @@ import { CategoryPie } from "./Charts/CategoryPie";
 import { UserBarChart } from "./Charts/UserBar";
 import Options from "./Menu";
 import SectionB from "./SectionB";
-
+import Filter from "./Filter";
 export {
     Spinner,
     Section,
@@ -35,5 +35,6 @@ export {
     CategoryPie,
     UserBarChart,
     Options,
-    SectionB
+    SectionB,
+    Filter
 }

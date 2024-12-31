@@ -8,6 +8,7 @@ import Inbox from "./account/Inbox";
 import MapPage from "./account/Map";
 import Rooms from "./general/Rooms";
 import Home from "./general/Home";
+import AllProperties from "./general/All";
 
 export {
     Login,
@@ -19,5 +20,6 @@ export {
     Inbox,
     MapPage,
     Rooms,
-    Home
+    Home,
+    AllProperties
 }
