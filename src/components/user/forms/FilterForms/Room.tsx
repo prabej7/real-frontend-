@@ -79,7 +79,9 @@ const RoomFilter: React.FC<Props> = ({ onMap }) => {
             });
 
             setRooms(rooms);
-
+            if (rooms.length == 0) {
+                toast.info("No rooms found!");
+            }
         } catch (error) {
             console.log(error);
             toast.error("Something went wrong!");

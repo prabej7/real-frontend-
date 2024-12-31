@@ -22,7 +22,7 @@ const Search: React.FC<Props> = ({ onSearch }) => {
 
     return <div className='absolute z-10 left-[38%] top-6 gap-6 flex' >
         <Input onChange={(e) => setQuery(e.target.value)} placeholder='Search City' className='bg-white' />
-        <Button onClick={handleSearch} className='custom-button hover:bg-blue-500' >
+        <Button onClick={handleSearch} variant="primary" >
             <SearchIcon />
         </Button>
     </div>

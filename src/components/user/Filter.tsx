@@ -25,8 +25,8 @@ const Filter: React.FC<Props> = ({ onMap }) => {
             ]} onChange={(value) => Select(value as PropertyOptions)} />
 
             {selected == "room" && <RoomFilter onMap={onMap} />}
-            {selected == "hostel" && <HostelFilter />}
-            {selected == "land" && <LandFilter />}
+            {selected == "hostel" && <HostelFilter onMap={onMap} />}
+            {selected == "land" && <LandFilter onMap={onMap} />}
         </div>
     </div>
 };
