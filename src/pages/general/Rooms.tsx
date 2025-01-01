@@ -7,8 +7,8 @@ import { useRooms, useHostels, useLands } from "@/store";
 import { titlelize } from "@/utils";
 import { Map } from "lucide-react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate, useLocation } from "react-router-dom";
+import { FaWhatsapp } from "react-icons/fa";
 export type Properties = "room" | "land" | "hostel";
 interface Props {
     selected: Properties
@@ -55,6 +55,7 @@ const PropertiesPage: React.FC<Props> = ({ selected }) => {
 
         }
 
+        const fullURL = window.location.href;
 
 
         return (
@@ -62,8 +63,15 @@ const PropertiesPage: React.FC<Props> = ({ selected }) => {
                 <div className="absolute " >
                     {selected && <Sheets side="top" open={selected ? true : false} onOpenChange={() => setSelected(undefined)} title={titlelize(type) + " Details"} desciption="See a detailed description here."
                         content={<div className="flex gap-12 " >
-                            <div  >
+                            <div className="flex flex-col" >
                                 <ImagesC imgs={imgs} />
+                                <Button variant="primary" className="mt-3" onClick={() => {
+                                    const encodedMessage = encodeURIComponent(`I know about more this - ${fullURL}/${id}`);
+                                    const whatsappURL = `https://wa.me/+9779821224434?text=${encodedMessage}`;
+                                    window.open(whatsappURL, "_blank");
+                                }}   >
+                                    <FaWhatsapp />
+                                    Book Now via WhatsApp !</Button>
                             </div>
                             <div>
 
