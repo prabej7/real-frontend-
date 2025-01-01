@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AuthLayout from './pages/AuthLayout';
 import { useRestore } from './hooks';
+import PropertiesPage from './pages/general/Rooms';
 
 function App() {
   useRestore()
@@ -12,9 +13,11 @@ function App() {
     { path: '/login', element: <Login /> },
     { path: '/register', element: <Register /> },
     { path: "/map", element: <MapPage /> },
-    { path: "/rooms", element: <Rooms /> },
+    { path: "/rooms", element: <Rooms selected='room' /> },
     { path: '/', element: <Home /> },
-    { path: "/all", element: <AllProperties /> }
+    { path: "/all", element: <AllProperties /> },
+    { path: "/hostels", element: <PropertiesPage selected='hostel' /> },
+    { path: "/lands", element: <PropertiesPage selected='land' /> }
   ];
 
   const protectedRoutes: RouteProps[] = [

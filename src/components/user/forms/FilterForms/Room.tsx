@@ -125,7 +125,7 @@ const RoomFilter: React.FC<Props> = ({ onMap }) => {
             </div>
             <div className="flex flex-col gap-3" >
 
-                <Input placeholder="Number of rooms" type="number" name="noOfRooms" className="font-light" value={formFields.noOfRooms} onChange={handleChange} />
+                <Input placeholder="Number of rooms" type="number" name="noOfRooms" className="font-light" value={`${formFields.noOfRooms !== 0 && formFields.noOfRooms}`} onChange={handleChange} />
 
                 <div className="flex flex-col" >
                     {checkboxes.map(({ title, value }) => {

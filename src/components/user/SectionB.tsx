@@ -8,7 +8,7 @@ interface Props {
 
 const SectionB: React.FC<Props> = ({ children, selected }) => {
 
-    const links = ["Home", "Rooms", "Hotels", "Lands"];
+    const links = ["Home", "Rooms", "Hostels", "Lands"];
 
     return <div className="main" >
         <Nav selected={selected} title={siteName} links={links} />
