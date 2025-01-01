@@ -13,7 +13,8 @@ interface Props {
     content?: React.ReactNode;
     footer?: string;
     footerStyle?: string;
-    options?: React.ReactNode
+    options?: React.ReactNode;
+    onClick?: () => void;
 }
 
 const CardC: React.FC<Props> = ({ content, description, footer, title, footerStyle, options }) => {

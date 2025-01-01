@@ -14,10 +14,12 @@ interface Props {
     desciption?: string;
     content?: React.ReactNode;
     side?: "top" | "bottom" | "left" | "right" | null | undefined;
+    open?: boolean;
+    onOpenChange?: () => void;
 }
 
-const Sheets: React.FC<Props> = ({ trigger, desciption, title, content, side }) => {
-    return <Sheet >
+const Sheets: React.FC<Props> = ({ trigger, desciption, title, content, side,open,onOpenChange }) => {
+    return <Sheet open={open} onOpenChange={onOpenChange}  >
         <SheetTrigger>{trigger}</SheetTrigger>
         <SheetContent side={side} >
             <SheetHeader className="my-3" >
