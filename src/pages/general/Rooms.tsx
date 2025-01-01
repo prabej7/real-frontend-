@@ -7,7 +7,7 @@ import { useRooms, useHostels, useLands } from "@/store";
 import { titlelize } from "@/utils";
 import { Map } from "lucide-react";
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { FaWhatsapp } from "react-icons/fa";
 export type Properties = "room" | "land" | "hostel";
 interface Props {
