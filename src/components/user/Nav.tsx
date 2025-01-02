@@ -16,7 +16,7 @@ const Nav: React.FC<Props> = ({ links, title, selected }) => {
         <p className="font-bold text-2xl text-white" >{title}</p>
         <ul className="flex gap-6 font-light" >
             {links.map((link) => {
-                return <li className={`${selected == link ? "text-white" : "text-slate-400"} cursor-pointer`} onClick={() => navigate(link == "Home" ? '/' : "/" + link.toLowerCase())} >{link}</li>
+                return <li className={`${selected == link ? "text-white" : "text-slate-200"} cursor-pointer`} onClick={() => navigate(link == "Home" ? '/' : "/" + link.toLowerCase())} >{link}</li>
             })}
         </ul>
         {user?.id ? <div>
