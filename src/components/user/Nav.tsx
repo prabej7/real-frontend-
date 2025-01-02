@@ -13,10 +13,10 @@ const Nav: React.FC<Props> = ({ links, title, selected }) => {
     const navigate = useNavigate();
     const { user } = useUser();
     return <nav className="nav p-6 px-12 flex justify-between  items-center z-40" >
-        <p className="font-bold text-2xl text-gradient" >{title}</p>
+        <p className="font-bold text-2xl text-white" >{title}</p>
         <ul className="flex gap-6 font-light" >
             {links.map((link) => {
-                return <li className={`${selected == link ? "text-indigo-500" : "text-slate-800"} cursor-pointer`} onClick={() => navigate(link == "Home" ? '/' : "/" + link.toLowerCase())} >{link}</li>
+                return <li className={`${selected == link ? "text-white" : "text-slate-400"} cursor-pointer`} onClick={() => navigate(link == "Home" ? '/' : "/" + link.toLowerCase())} >{link}</li>
             })}
         </ul>
         {user?.id ? <div>

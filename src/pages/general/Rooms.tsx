@@ -19,6 +19,7 @@ const PropertiesPage: React.FC<Props> = ({ selected }) => {
     const { hostels } = useHostels();
     const { lands } = useLands();
     const name = titlelize(selected);
+    
     const navigate = useNavigate();
 
     // Dynamic mapping based on the selected property type
