@@ -7,6 +7,7 @@ import api from "@/constants/api";
 import { EllipsisVertical } from "lucide-react";
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 const Account: React.FC = () => {
     //eslint-disable-next-line
     const [_, __, removeCookie] = useCookies(['token']);
@@ -22,11 +23,18 @@ const Account: React.FC = () => {
         queryFn: () => axios.get(`${api}stats/users`).then(res => res.data as { month: string, verified: number, unverified: number }[]),
     });
 
+    useEffect(() => {
+        if (user && user.role !== "madmin") {
+            navigate("/");
+        }
+
+        //eslint-disable-next-line
+    }, [user]);
 
 
     if (isLoading) return <LoadingPage />
 
-    console.log(user);
+
 
     if (!user?.verified) {
         return <Verification />
